@@ -1,6 +1,7 @@
 /**
  * Longdesc Test Suite - Main Application
  * Navigation, filtering, and test viewer functionality
+ * RGAA 4.1 - 106 critères, 257 tests
  */
 
 (function() {
@@ -12,7 +13,8 @@
   const CONFIG = {
     testsBasePath: 'tests/',
     allTestsPath: 'all-tests.html',
-    defaultLang: 'fr'
+    defaultLang: 'fr',
+    rgaaVersion: '4.1'
   };
 
   // ==========================================================================
@@ -31,9 +33,10 @@
   };
 
   // ==========================================================================
-  // Test Data Registry - Complete RGAA 3.2016 Tests
+  // Test Data Registry - RGAA 4.1 (106 critères, 257 tests)
+  // Loaded from rgaa41-registry.js (RGAA41_REGISTRY)
   // ==========================================================================
-  const testsRegistry = {
+  const testsRegistry = typeof RGAA41_REGISTRY !== 'undefined' ? RGAA41_REGISTRY.themes : {
     'rgaa-1': {
       id: 'rgaa-1',
       title: { fr: 'Images', en: 'Images' },
