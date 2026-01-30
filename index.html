@@ -131,33 +131,32 @@
 
             <h4>Pour les outils automatiques :</h4>
             <ul>
-              <li>Utilisez le bouton <strong>"Raw Mode"</strong> pour accéder à la page HTML brute contenant tous les exemples.</li>
-              <li>L'URL directe est : <code>tests/legacy/index-original.html</code></li>
-              <li>Chaque test possède un ID unique (ex: <code>#test-1-1-1</code>) pour un ciblage précis.</li>
+              <li>Utilisez le bouton <strong>"Raw Mode"</strong> ou accédez directement à <a href="all-tests.html"><code>all-tests.html</code></a></li>
+              <li>Cette page contient <strong>tous les 125 tests</strong> avec exemples conformes et non conformes</li>
+              <li>Chaque test possède un ID unique (ex: <code>#test-1-1-1</code>) pour un ciblage précis</li>
+              <li>Idéal pour scanner avec Axe, Wave, Lighthouse, Pa11y, etc.</li>
             </ul>
 
-            <h4>Pour la documentation :</h4>
+            <h4>Pour la navigation :</h4>
             <ul>
-              <li>Naviguez par critère via le menu latéral.</li>
-              <li>Chaque test affiche les exemples conformes et non conformes.</li>
-              <li>Les métadonnées JSON documentent la couverture attendue par outil.</li>
+              <li>Utilisez le menu latéral pour naviguer par thème RGAA (1-13)</li>
+              <li>Cliquez sur un test pour voir les détails et les exemples</li>
+              <li>Utilisez les filtres pour afficher uniquement certains types d'éléments</li>
             </ul>
 
-            <h4>Structure des fichiers :</h4>
+            <h4>Fichiers clés :</h4>
             <div class="code-preview">
               <div class="code-preview__header">
                 <span>Structure</span>
               </div>
               <div class="code-preview__content">
-                <pre class="code-preview__code">tests/
-├── rgaa-1/                  # Thème Images
-│   ├── 1.1.1/
-│   │   └── meta.json        # Métadonnées du test
-│   └── ...
-├── rgaa-8/                  # Thème Éléments obligatoires
-├── rgaa-12/                 # Thème Navigation
-└── legacy/
-    └── index-original.html  # Page brute pour les outils</pre>
+                <pre class="code-preview__code">longdesc/
+├── index.html           # Cette interface (dashboard)
+├── all-tests.html       # Page avec TOUS les tests (pour outils auto)
+├── app/
+│   ├── css/main.css     # Styles de l'interface
+│   └── js/app.js        # Navigation et filtres
+└── img/                 # Images des exemples</pre>
               </div>
             </div>
           </div>
