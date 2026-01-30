@@ -1,0 +1,69 @@
+{
+  "id": "1.1.2",
+  "criterion": "1.1",
+  "theme": "rgaa-1",
+  "title": {
+    "fr": "Chaque zone (balise area) d'une image réactive a-t-elle un attribut alt ?",
+    "en": "Does each area (area tag) of an image map have an alt attribute?"
+  },
+  "description": {
+    "fr": "Ce test vérifie que chaque élément area d'une image map possède un attribut alt.",
+    "en": "This test checks that each area element of an image map has an alt attribute."
+  },
+  "element": "area",
+  "tags": ["area", "map", "alt", "image-map"],
+  "wcag": ["1.1.1"],
+  "level": "A",
+  "samples": {
+    "pass": [
+      {
+        "id": "pass-1",
+        "description": {
+          "fr": "Zone non cliquable avec alternative vide",
+          "en": "Non-clickable area with empty alternative"
+        },
+        "code": "<map name=\"map1\"><area alt=\"\" shape=\"rect\" coords=\"0,0,150,80\"></map>"
+      },
+      {
+        "id": "pass-2",
+        "description": {
+          "fr": "Zone cliquable avec alternative non vide",
+          "en": "Clickable area with not empty alternative"
+        },
+        "code": "<map name=\"map1\"><area alt=\"Description\" shape=\"rect\" coords=\"0,0,150,80\" href=\"#\"></map>"
+      }
+    ],
+    "fail": [
+      {
+        "id": "fail-1",
+        "description": {
+          "fr": "Zone sans attribut alt",
+          "en": "Area without alt attribute"
+        },
+        "code": "<map name=\"map1\"><area shape=\"rect\" coords=\"0,0,150,80\"></map>"
+      }
+    ]
+  },
+  "toolsCoverage": {
+    "axe": {
+      "detectsPass": null,
+      "detectsFail": true,
+      "rule": "area-alt"
+    },
+    "wave": {
+      "detectsPass": null,
+      "detectsFail": true,
+      "rule": "alt_area_missing"
+    },
+    "lighthouse": {
+      "detectsPass": null,
+      "detectsFail": false,
+      "rule": null
+    },
+    "pa11y": {
+      "detectsPass": null,
+      "detectsFail": true,
+      "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H24"
+    }
+  }
+}

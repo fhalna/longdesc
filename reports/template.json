@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tool Coverage Report",
+  "description": "Template for reporting accessibility tool coverage results",
+  "type": "object",
+  "properties": {
+    "tool": {
+      "type": "string",
+      "description": "Name of the accessibility testing tool"
+    },
+    "version": {
+      "type": "string",
+      "description": "Version of the tool tested"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the test run"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "testId": {
+            "type": "string",
+            "description": "ID of the RGAA test"
+          },
+          "passDetected": {
+            "type": ["boolean", "null"],
+            "description": "Whether the tool correctly identified passing samples"
+          },
+          "failDetected": {
+            "type": ["boolean", "null"],
+            "description": "Whether the tool correctly identified failing samples"
+          },
+          "falsePositives": {
+            "type": "integer",
+            "description": "Number of false positives"
+          },
+          "falseNegatives": {
+            "type": "integer",
+            "description": "Number of false negatives"
+          },
+          "rule": {
+            "type": "string",
+            "description": "The tool's rule ID that matched"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Additional notes about the test result"
+          }
+        },
+        "required": ["testId", "failDetected"]
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "totalTests": {
+          "type": "integer"
+        },
+        "detected": {
+          "type": "integer"
+        },
+        "notDetected": {
+          "type": "integer"
+        },
+        "coveragePercent": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "required": ["tool", "version", "date", "results"]
+}

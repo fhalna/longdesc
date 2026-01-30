@@ -1,0 +1,77 @@
+{
+  "id": "1.1.1",
+  "criterion": "1.1",
+  "theme": "rgaa-1",
+  "title": {
+    "fr": "Chaque image (balise img) a-t-elle un attribut alt ?",
+    "en": "Does each image (img tag) have an alt attribute?"
+  },
+  "description": {
+    "fr": "Ce test vérifie que chaque élément img possède un attribut alt, qu'il soit vide ou non.",
+    "en": "This test checks that each img element has an alt attribute, whether empty or not."
+  },
+  "element": "img",
+  "tags": ["img", "alt", "basic", "text-alternative"],
+  "wcag": ["1.1.1"],
+  "level": "A",
+  "samples": {
+    "pass": [
+      {
+        "id": "pass-1",
+        "description": {
+          "fr": "Image avec alternative vide",
+          "en": "Image with empty alternative"
+        },
+        "code": "<img src=\"image.png\" alt=\"\" />"
+      },
+      {
+        "id": "pass-2",
+        "description": {
+          "fr": "Image avec alternative non vide",
+          "en": "Image with not empty alternative"
+        },
+        "code": "<img src=\"image.png\" alt=\"Description de l'image\" />"
+      }
+    ],
+    "fail": [
+      {
+        "id": "fail-1",
+        "description": {
+          "fr": "Image sans attribut alt",
+          "en": "Image without alt attribute"
+        },
+        "code": "<img src=\"image.png\" />"
+      },
+      {
+        "id": "fail-2",
+        "description": {
+          "fr": "Lien image sans alternative",
+          "en": "Image link without alternative"
+        },
+        "code": "<a href=\"#\"><img src=\"image.png\" /></a>"
+      }
+    ]
+  },
+  "toolsCoverage": {
+    "axe": {
+      "detectsPass": null,
+      "detectsFail": true,
+      "rule": "image-alt"
+    },
+    "wave": {
+      "detectsPass": null,
+      "detectsFail": true,
+      "rule": "alt_missing"
+    },
+    "lighthouse": {
+      "detectsPass": null,
+      "detectsFail": true,
+      "rule": "image-alt"
+    },
+    "pa11y": {
+      "detectsPass": null,
+      "detectsFail": true,
+      "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37"
+    }
+  }
+}
